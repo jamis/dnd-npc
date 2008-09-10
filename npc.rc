@@ -1,0 +1,228 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_NPC DIALOG DISCARDABLE  0, 0, 355, 258
+STYLE WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+CAPTION "D&D NPC Generator 1.11"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_ALIGNMENT,43,7,93,100,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_GENDER,43,21,93,58,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_RACE,43,35,93,107,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CLASS1,170,7,84,93,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_LEVEL1,288,7,60,150,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CLASS2,170,21,84,93,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_LEVEL2,288,21,60,149,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_CLASS3,170,35,84,93,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_LEVEL3,288,35,60,142,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Alignment:",IDC_STATIC,8,9,34,8
+    LTEXT           "Gender:",IDC_STATIC,15,24,25,8
+    LTEXT           "Race:",IDC_STATIC,21,38,20,8
+    LTEXT           "Class #1:",IDC_STATIC,139,9,30,8
+    LTEXT           "Class #2:",IDC_STATIC,139,24,30,8
+    LTEXT           "Class #3:",IDC_STATIC,139,38,30,8
+    LTEXT           "Level #1:",IDC_STATIC,256,10,31,8
+    LTEXT           "Level #2:",IDC_STATIC,256,24,31,8
+    LTEXT           "Level #3:",IDC_STATIC,256,38,31,8
+    LTEXT           "Number to Generate:",IDC_STATIC,9,53,67,8
+    EDITTEXT        IDC_COUNT,77,51,32,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Random Seed:",IDC_STATIC,243,53,48,8
+    EDITTEXT        IDC_SEED,293,50,55,13,ES_AUTOHSCROLL | ES_NUMBER
+    DEFPUSHBUTTON   "Generate NPC's!",IDC_GENERATE,7,65,61,14
+    LTEXT           "Current Random Seed:",IDC_STATIC,6,240,73,8
+    EDITTEXT        IDC_CURRENTSEED,81,239,65,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "",IDC_NPCS,"RICHEDIT",ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_WANTRETURN | WS_BORDER | WS_VSCROLL | WS_TABSTOP,7,81,
+                    341,142
+    PUSHBUTTON      "&About the Generator",IDC_ABOUT,266,237,82,14
+    CONTROL         "Feats in [square brackets] are feats that were granted automatically due to a racial or class feature.",
+                    IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,19,224,310,8
+    PUSHBUTTON      "Configure Output",IDC_CONFIG,286,65,62,14
+    LTEXT           "Ability Score Generation Strategy:",IDC_STATIC,122,53,
+                    106,8
+    COMBOBOX        IDC_ABSTRATEGY,127,64,89,83,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Export to PCGen",IDC_PCGENEXPORT,186,237,79,14,
+                    WS_DISABLED
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 258, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About the NPC Generator 1.11"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,105,136,50,14
+    EDITTEXT        IDC_ABOUTTEXT,7,7,244,122,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+END
+
+IDD_CONFIG DIALOG DISCARDABLE  0, 0, 222, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configure Output"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Display Ability Score Bonuses",IDC_STATSABILITYBONUSES,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,109,10
+    CONTROL         "Display Armor Class Calculation Breakdown",
+                    IDC_STATSACBREAKDOWN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,17,152,10
+    CONTROL         "Display Initiative Calculation Breakdown",
+                    IDC_STATSINITBREAKDOWN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,27,141,10
+    CONTROL         "Display Attack Calculation Breakdown",
+                    IDC_STATSATTACKBREAKDOWN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,37,136,10
+    CONTROL         "Display Saving Throw Calculation Breakdown",
+                    IDC_STATSSAVEBREAKDOWN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,47,159,10
+    CONTROL         "Display Skill Calculation Breakdown",
+                    IDC_STATSSKILLBREAKDOWN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,57,128,10
+    CONTROL         "Display Languages Known",IDC_STATSLANGUAGES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,67,100,10
+    CONTROL         "Display Skills And Feats",IDC_STATSSKILLSFEATS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,77,91,10
+    CONTROL         "Display Possessions",IDC_STATSPOSSESSIONS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,86,79,10
+    CONTROL         "Display Spells",IDC_STATSSPELLS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,96,59,10
+    DEFPUSHBUTTON   "OK",IDOK,165,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,165,24,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_NPC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 348
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 251
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 251
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_NPC                 ICON    DISCARDABLE     "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_EDITMENU MENU DISCARDABLE 
+BEGIN
+    POPUP "blank"
+    BEGIN
+        MENUITEM "&Select All",                 IDC_EDIT_SELECT_ALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Copy",                       IDC_EDIT_COPY
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

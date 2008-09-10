@@ -1,0 +1,1 @@
+cl /Zi /I../../../utils /I../../include /I.. /Fehistory.exe npcHistory.c ../npcEngine.c ../../../utils/gameutil.c ../../src/dndutil.c ../../../utils/grammar.c

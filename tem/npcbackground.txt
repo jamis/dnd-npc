@@ -1,0 +1,19 @@
+[motivation]=[motivations]
+[recentpast]=[recentpasts]
+
+#stuff [areas] "areas.txt"
+#stuff [churches] "churches.txt"
+#stuff [classes] "classes.txt"
+#stuff [details] "details.txt"
+#stuff [groups] "groups.txt"
+#stuff [histories] "histories.txt"
+#stuff [institutions] "institutions.txt"
+#stuff [localareas] "localareas.txt"
+#stuff [monsters] "monsters.txt"
+#stuff [motivations] "motivations.txt"
+#stuff [origins] "origins.txt"
+#stuff [persons] "persons.txt"
+#stuff [philosophies] "philosophies.txt"
+#stuff [powergroups] "powergroups.txt"
+#stuff [races] "races.txt"
+#stuff [recentpasts] "recentpasts.txt"

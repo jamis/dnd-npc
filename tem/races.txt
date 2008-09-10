@@ -1,0 +1,7 @@
+humans
+elves
+half-elves
+halflings
+gnomes
+dwarves
+half-orcs

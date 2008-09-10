@@ -1,0 +1,90 @@
+<SCRIPT LANGUAGE="Javascript">
+  <!--begin
+    function pcgenHelp() {
+      alert( "Export to PCGen:\n\n" +
+             "This feature is experimental.  PCGen may not be able to import all generated files. " +
+             "It should be noted that you may have to edit the generated files in order to get PCGen " +
+             "to accept them.\n\n" +
+             "To export the NPC to PCGen format, right click on the \"Download in PCGen Format\" " +
+             "link, and select \"Save As\".  Be sure to name the file something ending with .pcg, " +
+             "so that PCGen will be able to open it.  If PCGen emits any errors while loading the " +
+             "NPC, you may need to edit the file manually to correct the errors.\n\n" +
+             "Please report any errors to Jamis Buck (jgb3@email.byu.edu).\n\n" +
+             "PCGen may be obtained at http://pcgen.sf.net" );
+    }
+  //end-->
+</SCRIPT>
+<CENTER>
+  <SPAN CLASS="NORMAL"><!--%DOPRINTABLE%--></SPAN><BR>
+  <SPAN CLASS="NORMAL"><!--%DOPCGEN%--></SPAN>
+</CENTER>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 ALIGN="CENTER" WIDTH="100%"><TR><TD>
+  <TABLE BORDER=0 ALIGN="CENTER">
+    <TR><TD CLASS="NORMAL">Name:</TD><TD CLASS="DATA"><!--%NAME%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Alignment:</TD><TD CLASS="DATA"><!--%ALIGNMENT%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Gender:</TD><TD CLASS="DATA"><!--%GENDER%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Race:</TD><TD CLASS="DATA"><!--%RACE%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Height:</TD><TD CLASS="DATA"><!--%HEIGHT%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Weight:</TD><TD CLASS="DATA"><!--%WEIGHT%--></TD></TR>
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="NORMAL">Strength:</TD><TD CLASS="DATA"><!--%STRENGTH%--> (<!--%STRBONUS%-->)</TD></TR>
+    <TR><TD CLASS="NORMAL">Dexterity:</TD><TD CLASS="DATA"><!--%DEXTERITY%--> (<!--%DEXBONUS%-->)</TD></TR>
+    <TR><TD CLASS="NORMAL">Constitution:</TD><TD CLASS="DATA"><!--%CONSTITUTION%--> (<!--%CONBONUS%-->)</TD></TR>
+    <TR><TD CLASS="NORMAL">Intelligence:</TD><TD CLASS="DATA"><!--%INTELLIGENCE%--> (<!--%INTBONUS%-->)</TD></TR>
+    <TR><TD CLASS="NORMAL">Wisdom:</TD><TD CLASS="DATA"><!--%WISDOM%--> (<!--%WISBONUS%-->)</TD></TR>
+    <TR><TD CLASS="NORMAL">Charisma:</TD><TD CLASS="DATA"><!--%CHARISMA%--> (<!--%CHABONUS%-->)</TD></TR>
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="NORMAL">Hit Points:</TD><TD CLASS="DATA"><!--%HP%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Armor Class:</TD><TD CLASS="DATA"><!--%AC%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Speed:</TD><TD CLASS="DATA"><!--%SPEED%--> ft.</TD></TR>
+    <TR><TD CLASS="NORMAL">Initiative:</TD><TD CLASS="DATA"><!--%INIT%--></TD></TR>
+    <TR><TD CLASS="NORMAL">CR:</TD><TD CLASS="DATA"><!--%CR%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Total Gear Value:</TD><TD CLASS="DATA"><!--%GEARVALUE%--></TD></TR>
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="HEADER" COLSPAN=2>Classes:</TD></TR>
+    <!--%CLASSES%-->
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="HEADER" COLSPAN=2>Saving Throws:</TD></TR>
+    <TR><TD CLASS="NORMAL">Fortitude:</TD><TD CLASS="DATA"><!--%FORTSAVE%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Reflex:</TD><TD CLASS="DATA"><!--%REFSAVE%--></TD></TR>
+    <TR><TD CLASS="NORMAL">Will:</TD><TD CLASS="DATA"><!--%WILLSAVE%--></TD></TR>
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="HEADER" COLSPAN=2>Attack Bonuses:</TD></TR>
+    <!--%ATTACK%-->
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="HEADER" COLSPAN=2>Languages:</TD></TR>
+    <!--%LANGUAGES%-->
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="HEADER" COLSPAN=2>Skills Points:</TD></TR>
+    <!--%SKILLPOINTS%-->
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="HEADER" COLSPAN=2>Skills:</TD></TR>
+    <!--%SKILLS%-->
+
+    <TR><TD CLASS="DIVIDER" COLSPAN=2><IMG SRC="img/blank.gif" WIDTH=1 HEIGHT=1></TD></TR>
+
+    <TR><TD CLASS="HEADER" COLSPAN=2>Feats:</TD></TR>
+    <!--%FEATS%-->
+
+    <!--%SPELLS%-->
+
+    <!--%BACKGROUND%-->
+
+  </TABLE>
+</TD></TR></TABLE>

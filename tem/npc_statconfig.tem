@@ -1,0 +1,424 @@
+<html lang="en">
+  <head>
+    <title>Jamis Buck's NPC Generator: Statblock Configuration</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    
+    <script language="javascript">
+      <!--
+        var styles = new Array( "jbrpg", "dark", "ddrafter", "christmas", "brown" );
+        var names = new Array( "Blue", "Dark", "Green", "Christmas", "Brown" );
+        var cookie_name = "jbrpgstyle";
+
+        // compute the date it will be in 'after' seconds... format for
+        // display as a cookie.
+        function cookieDate( after ) {
+          var cookieTime = new Date();
+
+          cookieTime.setTime( cookieTime.getTime() + after * 1000 );
+          return cookieTime.toGMTString();
+        }
+
+        // extract the name of the style that has been set, or 'jbrpg' by
+        // default
+        function styleCookie() {
+          var idx = document.cookie.indexOf( cookie_name + "=" );
+          if( idx < 0 ) return "jbrpg";
+          idx += cookie_name.length + 1;
+          idx2 = document.cookie.indexOf( ";", idx );
+          if( idx2 < 0 ) idx2 = document.cookie.length;
+          return document.cookie.substring( idx, idx2 );
+        }
+
+        // set the given style as the default, and reload the page
+        function setStyleCookie( which ) {
+          document.cookie = cookie_name + "=" + which + "; expires=" + cookieDate( 365 * 24 * 60 * 60 );
+          var cur_page = window.location;
+          window.location = cur_page;
+        }
+
+        // find the currently selected style and write out the 'link' statements
+        var sel_style = styleCookie();
+        var count = styles.length;
+        var i;
+
+//          document.writeln( '<link rel="stylesheet" type="text/css" href="./css/' + sel_style + '.css">' );
+
+        for( i = 0; i < count; i++ ) {
+          style = styles[ i ];
+          name  = names[ i ];
+
+          document.write( '<link rel="' );
+          if( style != sel_style ) document.write( "alternate " );
+          document.write( 'stylesheet" title="' + name + '" type="text/css" ' );
+          document.write( 'href="./css/' + style + '.css">\n' );
+        }
+      //-->
+    </script>
+    <noscript>
+    <link rel="stylesheet" title="Blue" type="text/css" href="./css/jbrpg.css">
+    <link rel="alternate stylesheet" title="Dark" type="text/css" href="./css/dark.css">
+    <link rel="alternate stylesheet" title="Green" type="text/css" href="./css/ddrafter.css">
+    <link rel="alternate stylesheet" title="Christmas" type="text/css" href="./css/christmas.css">
+    </noscript>
+  </head>
+
+  <body>
+    <!-- banner area -->
+    <table border="0" width="768" cellspacing="1" cellpadding="0"><tr><td class="BORDER">
+      <table border="0" width="768" cellspacing="1" cellpadding="0">
+        <tr>
+          <td width="300"><a href="."><img src="./img/jamis3_animated.gif" width="300" height="60" alt="Jamis Buck's RPG Generators" border="0" /></a></td>
+          <td valign="TOP" align="right" width="468"><iframe src="http://www.enworld.org/ads.asp" noresize scrolling="NO"
+            hspace="0" vspace="0" frameborder="0" marginheight="0" marginwidth="0" width="468"
+            height="60">
+            </iframe></td>
+        </tr>
+      </table></td></tr></table>
+
+    <p />
+
+    <!-- main body area -->
+    <table width="160" border="0" cellspacing="0" cellpadding="0" align="left">
+      <tr><td>
+        <table width="150" border="0" cellspacing="0" cellpadding="1" align="left"><tr><td class="BORDER">
+
+          <!-- navigation area -->
+          <table width="100%" border="0" cellspacing="0" cellpadding="1" class="NAV"><tr>
+            <td valign="TOP">
+              <table border="0" width="100%">
+                <tr><td class='NAVHDR'><a href="http://www.enworld.org">ENWorld</a></td></tr>
+<tr><td class='NAVHDR'><a href="./index.html">News/MainPage</a></td></tr>
+<tr><td class='NAVNORM'>
+&nbsp;&nbsp;<a href="./archive.html">News Archive</a><br />
+&nbsp;&nbsp;<a href="./rpggen.rss">RSS News Feed (XML)</a><br />
+</td></tr>
+<tr><td class='NAVHDR'>Last News Posted 12/21</td></tr>
+<tr><td class='NAVNORM'>
+&nbsp;&nbsp;<a href='./index.html'>Encounter S...et Updated</a><br />
+&nbsp;&nbsp;<a href='./index.html'>New Page Logo</a><br />
+</td></tr>
+<tr><td class='NAVHDR'>Generators</td></tr>
+<tr><td class='NAVNORM'>
+&nbsp;&nbsp;<a href="http://www.aarg.net/~minam/dungeon.cgi">Dungeon</a> / <a href="http://www.aarg.net/~minam/npc.cgi">NPC</a><br />
+&nbsp;&nbsp;<a href="http://www.aarg.net/~minam/towns.cgi">Town</a> / <a href="http://www.aarg.net/~minam/treasure2.cgi">Treasure</a><br />
+</td></tr>
+<tr><td class='NAVHDR'><a href="./downloads.html">Downloads</a></td></tr>
+<tr><td class='NAVHDR'><a href="./faq.html">FAQ</a> / <a href="./bio.html">About Jamis</a></td></tr>
+<tr><td class='NAVHDR'><a href="http://www.livejournal.com/users/minam/">Dev. Journal</a></td></tr>
+<tr><td class='NAVHDR'><a href="./developers.html">For Developers</a></td></tr>
+<tr><td class='NAVNORM'>
+&nbsp;&nbsp;<a href="./source.html">Source Code</a><br />
+</td></tr>
+<tr><td class='NAVHDR'><a href="./link.html">Links &amp; Other Software</a></td></tr>
+<tr><td class='NAVHDR'><a href="./contact.html">Contact Info</a></td></tr>
+<tr><td class='NAVNORM'>
+&nbsp;&nbsp;<a href="./contact.html#donations">Make a Donation</a><br />
+</td></tr>
+<tr><td class='NAVHDR'>Color Scheme</td></tr>
+<tr><td class='NAVNORM'>
+&nbsp;&nbsp;<a href="javascript:setStyleCookie('jbrpg');">Blue</a> / <a href="javascript:setStyleCookie('ddrafter');">Green</a> / <a href="javascript:setStyleCookie('dark');">Dark</a> / <a href="javascript:setStyleCookie('brown');">Brown</a><br />
+&nbsp;&nbsp;-- <a href="javascript:setStyleCookie('christmas');">Christmas</a>! --<br />
+</td></tr>
+<tr><td class='NAVHDR'><a href="./logos.html">Site Logos</a></td></tr>
+<tr><td class='NAVHDR'><a href="http://66.34.55.203/ubb/ultimatebb.php?ubb=forum&f=15">Message Boards</a></td></tr>
+<tr><td class='NAVHDR'>Poll</td></tr>
+<tr><td class='NAVNORM' align='center'>
+<div align="center"><script language="JavaScript" src="http://pub50.bravenet.com/minipoll/show.php?usernum=4251116623&cpv=1"></script></div>
+
+</td></tr>
+
+                <tr><td class='NAVHDR'>&nbsp;</td></tr>
+              </table>
+
+              <center>
+              <!-- Die Roller's Top 50 - rpggateway.com -->
+
+<table background="http://www.rpggateway.com/images/bckgr03.jpg" border=1 bordercolor="#E4CC99" cellspacing="2" cellpadding="0" height="240" width="120"> <tr valign="top"><td align="center"><p style="font: 8pt Arial"><form action="http://www.rpggateway.com/cgi-bin/wyrm/rate.cgi" target="_top" method="POST"><a href="http://www.rpggateway.com/Ratings/" target="_top"><img src="http://www.rpggateway.com/images/die-rollers-head.gif" alt="RPG, D&D Library" height="60" width="120" hspace=0 vspace=0 border=0 align="top"></a><br><br><b>Vote for me!</b><br>Rate this site between one and five stars, where five stars is an absolute <nobr>"Must See"</nobr> web site that no one should miss and one star is a <nobr>"Don't bother."</nobr><br><br><input type=hidden name="ID" value="6557"><select name=rate style="font: 8pt Arial"><option value=""><option value="1">1 - Don't Bother<option value="2">2 - Might be Useful<option value="3">3 - Interesting<option value="4">4 - Try to Get There<option value="5">5 - Don't Miss!</select><br><input type=submit value="Rate This Site" style="font: bold 8pt Arial"><p><a href="http://www.rpggateway.com">rpggateway.com</a></form></td></tr></table>
+
+<p>
+
+<!-- RPG 100 Top Sites -->
+
+<table width="100%" border="1" cellspacing="0" cellpadding="2"><tr><td class="NAVNORM" align="center">
+
+<b>Vote For This Site At:</b><br>
+
+<a href="http://www.rpgtopsites.com/in.php3?list=979077131&site=rpggenerators" target=_blank>RPG Top 25</a><br />
+
+<a href="http://www.rpgtopsites.com/in.php3?list=978313715&site=rpggenerators" target=_blank>RPG Top 50</a>
+
+<p>
+
+Vote Again, Daily!<br>
+
+-- Yes, it's Legal :) --
+
+</td></tr></table>
+
+
+
+              <p />
+              <!-- START OF WEBTRENDS LIVE TAG -->
+
+<!-- Copyright 1999-2000 WebTrends Corporation -->
+
+<!-- eCommerce Revenue Tracking (patent pending) -->
+
+
+
+<!-- Visit us at http://www.webtrendslive.com -->
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+// You may customize the values of the variables below to suit your website.
+
+// Simply insert your own values between the double-quotes.
+
+// Here are some examples:
+
+//   var ORDER= "D2,Business to Consumer,Pocket FM Radio,Audio Products,10,499.99;";
+
+//   var SERVER= "MyServerName";
+
+//   var CONTENTGROUP= "ContentGroupOfThisPage";
+
+
+
+var ORDER= "";
+
+var SERVER= "";
+
+var CONTENTGROUP= "";
+
+//-->
+
+</SCRIPT>
+
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+// Modification of this code is not allowed and will permanently disable your account!
+
+// SiteName: Jamis Buck RPG Generators
+
+var W="tagver=3&SiteId=61014&Sid=005-01-3-16-232606-61014&Tz=-700&firstwkday=sunday&Edition=personal&Button=13";
+
+W+="&server="+escape(SERVER);
+
+W+="&order="+escape(ORDER);
+
+W+="&Group="+escape(CONTENTGROUP);
+
+W+="&browserDate="+escape(new Date());
+
+W+="&title="+escape(document.title);
+
+W+="&url="+window.document.URL;
+
+W+="&referrer="+window.document.referrer;
+
+W+="&appname="+escape(navigator.appName);
+
+W+="&appversion="+escape(navigator.appVersion);
+
+W+="&cookieOK="+(navigator.cookieEnabled?"Yes":"No");
+
+W+="&userLanguage="+(navigator.appName=="Netscape"?navigator.language:navigator.userLanguage);
+
+W+="&platform="+navigator.platform;
+
+W+="&bgColor="+escape(document.bgColor);
+
+W+="&javaOK=Yes";
+
+if(typeof(screen)=="object")
+
+{
+
+W+="&screenResolution="+screen.width+"x"+screen.height;
+
+W+="&colorDepth="+screen.colorDepth;
+
+W+="&NSpluginList=";
+
+for( var i=0; i< navigator.plugins.length; i++)
+
+W+=escape(navigator.plugins[i].name)+";";
+
+}
+
+document.write('<A TARGET="_blank" HREF="http://www.webtrendslive.com/redirect.asp?siteID=61014">');
+
+document.write('<IMG BORDER="0" WIDTH="100" HEIGHT="30" SRC="http://statse.webtrendslive.com/S005-01-3-16-232606-61014/button3.asp?'+W+'">');
+
+document.write('</A>');
+
+//-->
+
+</SCRIPT>
+
+
+
+<NOSCRIPT>
+
+<A TARGET="_blank" HREF="http://www.webtrendslive.com/redirect.asp?siteID=61014">
+
+<IMG BORDER="0" WIDTH="100" HEIGHT="30" SRC="http://statse.webtrendslive.com/S005-01-3-16-232606-61014/button3.asp?tagver=3&SiteId=61014&Sid=001-00-3-10-6692-7351&Tz=-700&firstwkday=sunday&Edition=personal&Button=13&title=NO%20SCRIPT&url=http://noscript&javaOK=No&">
+
+</A>
+
+</NOSCRIPT>
+
+<!-- END OF WEBTRENDS LIVE TAG -->
+
+<br>
+
+<a href="http://vim.sf.net"><img border="0" width="90" height="36" src="./img/vim.png" alt="Made with VIM"></a>
+
+
+
+              </center>
+            </td>
+          </tr>
+          <tr>
+            <td valign="bottom" class="NAVNORM">
+              <br /> <br /> <br /> <br /> <br /> <br />
+              <center>
+              <hr size="1" />
+              
+              <br />
+              Copyright &copy; 2001<br />
+              Jamis Buck.<br />
+              All rights reserved.
+              </center>
+              <br />
+            </td>
+          </tr>
+        </table>
+      </td></tr></table>
+      </td><td>&nbsp;</td>
+    </tr></table>
+
+    <table border="0" cellspacing="0" cellpadding="0"><tr><td class="NORMAL">
+    <H2>NPC Generator:  Configuration</H2>
+
+<P>
+
+
+
+<DIV CLASS="NORMAL">
+
+The following options determine how the stat-block will display.  Please
+
+select or deselect any of the following options and press "submit."
+
+<P>
+
+<FORM ACTION="<!--%CGINAME%-->" METHOD="GET">
+
+  <INPUT TYPE="HIDDEN" NAME="configsave" VALUE="1">
+
+  <INPUT TYPE="HIDDEN" NAME="look" VALUE="<!--%LOOK%-->">
+
+  <INPUT TYPE="checkbox" NAME="stats_ability_bonuses" VALUE="1" <!--%IF_EQ=STATSABILITYBONUSES=1=CHECKED%-->> Display Ability Score Bonuses<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_ac_breakdown" VALUE="1" <!--%IF_EQ=STATSACBREAKDOWN=1=CHECKED%-->> Display Armor Class Calculation Breakdown<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_init_breakdown" VALUE="1" <!--%IF_EQ=STATSINITBREAKDOWN=1=CHECKED%-->> Display Initiative Calculation Breakdown<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_attack_breakdown" VALUE="1" <!--%IF_EQ=STATSATTACKBREAKDOWN=1=CHECKED%-->> Display Attack Calculation Breakdown<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_save_breakdown" VALUE="1" <!--%IF_EQ=STATSSAVEBREAKDOWN=1=CHECKED%-->> Display Saving Throw Calculation Breakdown<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_skill_breakdown" VALUE="1" <!--%IF_EQ=STATSSKILLBREAKDOWN=1=CHECKED%-->> Display Skill Calculation Breakdown<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_languages" VALUE="1" <!--%IF_EQ=STATSLANGUAGES=1=CHECKED%-->> Display Languages Known<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_skillsfeats" VALUE="1" <!--%IF_EQ=STATSSKILLSFEATS=1=CHECKED%-->> Display Skills and Feats<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_possessions" VALUE="1" <!--%IF_EQ=STATSPOSSESSIONS=1=CHECKED%-->> Display Possessions<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_spells" VALUE="1" <!--%IF_EQ=STATSSPELLS=1=CHECKED%-->> Display Spells<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_formatting" VALUE="1" <!--%IF_EQ=STATSFORMATTING=1=CHECKED%-->> Do Rich Formatting (<B>bold</B>, <I>italics</I>, etc.)<BR>
+
+  <INPUT TYPE="checkbox" NAME="stats_skill_points" VALUE="1" <!--%IF_EQ=STATSSKILLPOINTS=1=CHECKED%-->> Display Skill Point Totals<BR>
+
+  <INPUT TYPE="submit" VALUE="Submit">
+
+</FORM>
+
+</DIV>
+
+
+
+
+<hr size="1" />
+    <table border="0" cellspacing="0" cellpadding="1" align="center"><tr><td CLASS="BORDER">
+      <table border="0" cellspacing="0" cellpadding="2" align="center"><tr><td CLASS="ASIDE" align="center">
+      <form action="https://www.paypal.com/cgi-bin/webscr" methd="post">
+      Making generators is hard work!<br>
+      If you can spare a few dollars, a donation is a great way to show your appreciation.<br>
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="jgb3@email.byu.edu">
+      <input type="hidden" name="item_name" value="Jamis Buck's RPG Generators">
+      <input type="hidden" name="no_shipping" value="1">
+      <input type="hidden" name="return" value=".">
+      <input type="hidden" name="cancel_return" value=".">
+      <input type="submit" value="Click Here to Donate Via PayPal"><br>
+      <!--
+      <input type="image" src="http://images.paypal.com/images/x-click-but21.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!"><br>
+      -->
+      <small>[ <a href="./faq.html#Donations">Tell me more about donating money</a> ]</small>
+      </form>
+      </td></tr></table>
+    </td></tr></table>
+
+
+<hr size="1" />
+    <a name="search"></a>
+    <table border="0" cellspacing="0" cellpadding="1" align="center"><tr><td class="BORDER">
+      <table cellspacing=0 border=0 bgcolor=#a0a0a0 align="center">
+      <tr>
+      <td bgcolor=#e0e0e0>
+        
+      <font size=1 face="arial,helvetica" >
+      <A HREF="http://search.freefind.com/find.html?id=1854112">
+      Search this site</a>      
+      powered by <A HREF="http://www.freefind.com">FreeFind</A><br>
+      </td></tr><tr><td bgcolor=#a0a0a0><font size=1 face="arial,helvetica" >
+      <center>
+      <FORM ACTION="http://search.freefind.com/find.html"
+      METHOD="GET" target="_top"><INPUT TYPE="HIDDEN" NAME="id" SIZE="-1" VALUE="1854112">
+      <INPUT TYPE="HIDDEN" NAME="pid" SIZE="-1" VALUE="r">
+      <INPUT TYPE="HIDDEN" NAME="mode" SIZE="-1" VALUE="ALL">
+      <INPUT type="HIDDEN" name="n" value="0">
+      <INPUT TYPE="TEXT" NAME="query" SIZE="20">
+      <INPUT TYPE="SUBMIT" VALUE=" Find! "><input type="SUBMIT"
+      name="sitemap" value="Site Map">
+      </center></font></FORM></td></tr></table>
+    </td><tr></table>
+
+
+<hr size="1" />
+  <div class="NORMAL">
+    <i>Dungeons & Dragons</i>&reg; and <i>D&D</i>&reg; are trademarks 
+    owned by <a href="http://www.wizards.com">Wizards of the Coast</a>.
+  </div>
+ 
+
+
+
+    </td></table>
+
+  </body>
+
+</html>

@@ -1,0 +1,5 @@
+The character had a recent encounter with one or more [monsters].
+The character has just come from [localareas].
+Nothing of interest has happened recently to the character.
+The character had a recent run in with [groups].
+The character has been visting a friend in [localareas].

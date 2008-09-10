@@ -1,0 +1,17 @@
+This NPC generator incorporates data and information from the Open Gaming
+License (OGL) and from the "Creature Collection" Copyright 2000 by Sword and
+Sorcery Studios. The "Core (PHB)" races, "DMG" races, and "Monster Manual"
+races are from (respectively) the "Player's Handbook", "Dungeon Master's
+Guide", and the "Monster Manual", all Copyright 2000 by Wizards of the Coast.
+The character classes, skills, feats, spells, and level progression rules are
+from the Player's Handbook and the Dungeon Master's Guide.  The above races,
+classes, skills, feats, and rules also exist in the System Reference Document
+(http://www.opengamingfoundation.org/srd.html) of the Open Gaming License.
+The "Creature Collection" races are from the "Creature Collection" by Sword
+and Sorcery Studios.
+
+All other aspects of this program, including the algorithms for generating a
+random non-player character, are released in the PUBLIC DOMAIN.
+
+- Jamis Buck <jamis@jamisbuck.org>
+  9 Sep 2008

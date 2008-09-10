@@ -1,0 +1,14 @@
+barbarians
+bards
+clerics
+druids
+fighters
+monks
+rangers
+sorcerers
+wizards
+adepts
+aristocrats
+warriors
+commoners
+experts

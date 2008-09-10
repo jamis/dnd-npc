@@ -1,0 +1,25 @@
+cenN  |Chivalry.  The character believes that helping others is an end in and of itself.
+en    |Love for [details]. The character puts the object of their love's welfare before their own.
+cN    |A sense of duty to [details]. The character feels a moral obligation to fulfill this duty.
+e     |Compassion for [details]. The character feels a strong desire to help the object of this compassion.
+cN    |A desire to be a powerful leader. The character feels they can bring about change as strong leader.
+cN    |Feels a strong desire to seek justice for [details]. The character feels an injustice has been done against them, and must be corrected.
+      |A desire for money/treasure.
+      |A need to defend themself from [details]. The character feels continually threatened, and defense is their priority.
+g     |Revenge against [details]. The character feels an overwhelming need to exact revenge.
+      |A need for knowledge about [details]. The character feels than an understanding will solve their problems.
+ec    |Clearing their name.  The character's name or reputation has been wronged in the past by [details], and they desire to right it.
+l     |Thrill seeking.  The character has passion for adventuring and risk.
+      |A deep fear of [details]. The character is terrified, and will act out of fear.
+      |Boredom. The character has no other reason than their life is otherwise uninteresting.
+      |Divine. The character is compelled to act according to their religious beliefs.
+      |The character is being coerced by [details]. The character would not normally act this way, but is being blackmailed/forced/etc.
+lg    |Survival. The character feels the way they act is they only way to get by in the world.
+lN    |Insanity. The character is not mentally stable, and does not behave rationally.
+en    |A sense of guilt for [details]. The character feels that past wrongs leave them morally obligated to help them if they can.
+cN    |A strong sense of loyalty to [details]. The character feels that they owe them much, and will act to help them.
+      |A rivalry with [details]. The character's history is dominated by an ongoing struggle with them.
+gn    |Sadism.  The character is a sadist and enjoys harming others and inflicting pain and misery.
+g     |A deep hatred of [details]. The character's hate runs deep, and dominates their personality.
+      |A desire for power and/or immortality.
+gn    |The character is innately evil, and will not knowingly do any good. Evil is all they know.

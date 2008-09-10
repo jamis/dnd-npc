@@ -1,0 +1,523 @@
+<html lang="en">
+  <head>
+    <title>NPC Generator</title>
+    <link rel="stylsheet" type="text/css" href="http://www.aarg.net/~minam/css/generators.css" />
+    <script language="Javascript">
+      <!--begin
+        function resetForm() {
+          var i;
+          for( i = 0; i < document.npc.elements.length; i++ ) {
+            if( document.npc.elements[i].type == "select-one" ) {
+              document.npc.elements[i].selectedIndex = 0;
+            }
+          }
+          document.npc.count.value = "1";
+        }
+
+        function configureStatBlock() {
+          var newUrl;
+
+          newUrl = "<!--%CGINAME%-->?configure=1&" +
+                   "stats_ability_bonuses=" + document.npc.stats_ability_bonuses.value + "&" +
+                   "stats_ac_breakdown=" + document.npc.stats_ac_breakdown.value + "&" +
+                   "stats_init_breakdown=" + document.npc.stats_init_breakdown.value + "&" +
+                   "stats_attack_breakdown=" + document.npc.stats_attack_breakdown.value + "&" +
+                   "stats_save_breakdown=" + document.npc.stats_save_breakdown.value + "&" +
+                   "stats_skill_breakdown=" + document.npc.stats_skill_breakdown.value + "&" +
+                   "stats_languages=" + document.npc.stats_languages.value + "&" +
+                   "stats_skillsfeats=" + document.npc.stats_skillsfeats.value + "&" +
+                   "stats_possessions=" + document.npc.stats_possessions.value + "&" +
+                   "stats_spells=" + document.npc.stats_spells.value + "&" +
+                   "stats_formatting=" + document.npc.stats_formatting.value + "&" +
+                   "stats_skill_points=" + document.npc.stats_skill_points.value;
+
+          window.location = newUrl;
+        }
+      //end-->
+    </script>
+  </head>
+
+  <body bgcolor="white">
+    Other Generators by <a href="mailto:jgb3@email.byu.edu">Jamis Buck</a>:
+    [ <a href="http://www.aarg.net/~minam/treasure2.cgi">Treasure</a> /
+      <a href="http://www.aarg.net/~minam/towns.cgi">Town</a> /
+      <a href="http://www.aarg.net/~minam/dungeon.cgi">Dungeon</a> ]
+    <hr />
+
+    <H2>NPC Generator</H2>
+    <P>
+
+    <DIV CLASS="NORMAL">
+    <B>Welcome</B> to the online Dungeons &amp; Dragons NPC generator!
+    This tool allows you to generate random characters for the heroes of
+    your campaign to encounter.  Try it out!
+    <p>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="jgb3@email.byu.edu">
+      <input type="hidden" name="item_name" value="D&#038;D Generators">
+      <input type="hidden" name="no_note" value="1">
+      <input type="hidden" name="currency_code" value="USD">
+      <input type="hidden" name="tax" value="0">
+
+      If you feel so inclined, I do accept <b>donations</b>.  Feel free to
+      send me some cash (whatever you feel this service is worth) via
+      <a href="http://www.paypal.com">PayPal</a>:
+      <input type="image" src="https://www.paypal.com/images/x-click-but21.gif"
+             border="0"
+             name="submit"
+             alt="Make payments with PayPal - it's fast, free and secure!">
+    </form>
+    <p>
+    <i>Please note</i> that this generator will only generate NPC's of up to 20th
+    level.  This is <I>character level</I>, which means that if you try to
+    get a Wiz20/Sor20/Clr20 character -- that's actually a <I>60th level
+    character</I>!  The generator will only try to generate the first 20 levels
+    and returns whatever it came up with (in the previous example, a 20th
+    level wizard).
+    <P>
+    </DIV>
+
+    <P>
+    <HR SIZE=1>
+
+    <DIV CLASS="NORMAL">
+    <FORM NAME="npc" ACTION="<!--%CGINAME%-->" METHOD="GET">
+      <INPUT TYPE="HIDDEN" NAME="look" VALUE="<!--%LOOK%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_ability_bonuses" VALUE="<!--%STATSABILITYBONUSES%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_ac_breakdown" VALUE="<!--%STATSACBREAKDOWN%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_init_breakdown" VALUE="<!--%STATSINITBREAKDOWN%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_attack_breakdown" VALUE="<!--%STATSATTACKBREAKDOWN%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_save_breakdown" VALUE="<!--%STATSSAVEBREAKDOWN%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_skill_breakdown" VALUE="<!--%STATSSKILLBREAKDOWN%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_languages" VALUE="<!--%STATSLANGUAGES%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_skillsfeats" VALUE="<!--%STATSSKILLSFEATS%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_possessions" VALUE="<!--%STATSPOSSESSIONS%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_spells" VALUE="<!--%STATSSPELLS%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_formatting" VALUE="<!--%STATSFORMATTING%-->">
+      <INPUT TYPE="HIDDEN" NAME="stats_skill_points" VALUE="<!--%STATSSKILLPOINTS%-->">
+      <TABLE BORDER=0>
+        <TR>
+          <TD CLASS="NORMAL">
+            Alignment:
+          </TD>
+          <TD CLASS="NORMAL" COLSPAN="3">
+            <SELECT NAME="alignment">
+              <OPTION VALUE="any"  <!--%IF_EQ=ALIGNMENT=any=SELECTED%-->>Any</OPTION>
+              <OPTION VALUE="anyl" <!--%IF_EQ=ALIGNMENT=anyl=SELECTED%-->>Any Lawful</OPTION>
+              <OPTION VALUE="nlaw" <!--%IF_EQ=ALIGNMENT=nlaw=SELECTED%-->>Any Non-Lawful</OPTION>
+              <OPTION VALUE="anyN" <!--%IF_EQ=ALIGNMENT=anyN=SELECTED%-->>Any Neutral (Law vs. Chaos)</OPTION>
+              <OPTION VALUE="anyc" <!--%IF_EQ=ALIGNMENT=anyc=SELECTED%-->>Any Chaotic</OPTION>
+              <OPTION VALUE="ncha" <!--%IF_EQ=ALIGNMENT=ncha=SELECTED%-->>Any Non-Chaotic</OPTION>
+              <OPTION VALUE="anyg" <!--%IF_EQ=ALIGNMENT=anyg=SELECTED%-->>Any Good</OPTION>
+              <OPTION VALUE="ngoo" <!--%IF_EQ=ALIGNMENT=ngoo=SELECTED%-->>Any Non-Good</OPTION>
+              <OPTION VALUE="anyn" <!--%IF_EQ=ALIGNMENT=anyn=SELECTED%-->>Any Neutral (Good vs. Evil)</OPTION>
+              <OPTION VALUE="anye" <!--%IF_EQ=ALIGNMENT=anye=SELECTED%-->>Any Evil</OPTION>
+              <OPTION VALUE="nevi" <!--%IF_EQ=ALIGNMENT=nevi=SELECTED%-->>Any Non-Evil</OPTION>
+              <OPTION VALUE="lg"   <!--%IF_EQ=ALIGNMENT=lg=SELECTED%-->>Lawful Good</OPTION>
+              <OPTION VALUE="ln"   <!--%IF_EQ=ALIGNMENT=ln=SELECTED%-->>Lawful Neutral</OPTION>
+              <OPTION VALUE="le"   <!--%IF_EQ=ALIGNMENT=le=SELECTED%-->>Lawful Evil</OPTION>
+              <OPTION VALUE="ng"   <!--%IF_EQ=ALIGNMENT=ng=SELECTED%-->>Neutral Good</OPTION>
+              <OPTION VALUE="nn"   <!--%IF_EQ=ALIGNMENT=nn=SELECTED%-->>True Neutral</OPTION>
+              <OPTION VALUE="ne"   <!--%IF_EQ=ALIGNMENT=ne=SELECTED%-->>Neutral Evil</OPTION>
+              <OPTION VALUE="cg"   <!--%IF_EQ=ALIGNMENT=cg=SELECTED%-->>Chaotic Good</OPTION>
+              <OPTION VALUE="cn"   <!--%IF_EQ=ALIGNMENT=cn=SELECTED%-->>Chaotic Neutral</OPTION>
+              <OPTION VALUE="ce"   <!--%IF_EQ=ALIGNMENT=ce=SELECTED%-->>Chaotic Evil</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            Gender:
+          </TD>
+          <TD CLASS="NORMAL" COLSPAN="3">
+            <SELECT NAME="gender">
+              <OPTION VALUE="any" <!--%IF_EQ=GENDER=any=SELECTED%-->>Any</OPTION>
+              <OPTION VALUE="male" <!--%IF_EQ=GENDER=male=SELECTED%-->>Male</OPTION>
+              <OPTION VALUE="female" <!--%IF_EQ=GENDER=female=SELECTED%-->>Female</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            Race:
+          </TD>
+          <TD CLASS="NORMAL" COLSPAN="3">
+            <SELECT NAME="race">
+              <OPTION VALUE="any" <!--%IF_EQ=RACE=any=SELECTED%-->>-- Any Core Race --</OPTION>
+              <OPTGROUP LABEL="Core (PHB) Races">
+                <OPTION VALUE="anycore" <!--%IF_EQ=RACE=anycore=SELECTED%-->>-- Any Standard (PHB) Race --</OPTION>
+                <OPTION VALUE="dwarf" <!--%IF_EQ=RACE=dwarf=SELECTED%-->>&nbsp;&nbsp;Dwarf, Hill</OPTION>
+                <OPTION VALUE="elf" <!--%IF_EQ=RACE=elf=SELECTED%-->>&nbsp;&nbsp;Elf, High</OPTION>
+                <OPTION VALUE="gnome" <!--%IF_EQ=RACE=gnome=SELECTED%-->>&nbsp;&nbsp;Gnome, Rock</OPTION>
+                <OPTION VALUE="halfelf" <!--%IF_EQ=RACE=halfelf=SELECTED%-->>&nbsp;&nbsp;Half-elf</OPTION>
+                <OPTION VALUE="halfling" <!--%IF_EQ=RACE=halfling=SELECTED%-->>&nbsp;&nbsp;Halfling, Lightfoot</OPTION>
+                <OPTION VALUE="halforc" <!--%IF_EQ=RACE=halforc=SELECTED%-->>&nbsp;&nbsp;Half-orc</OPTION>
+                <OPTION VALUE="human" <!--%IF_EQ=RACE=human=SELECTED%-->>&nbsp;&nbsp;Human</OPTION>
+              </OPTGROUP>
+              <OPTGROUP LABEL="DMG Races">
+                <OPTION VALUE="anydmg" <!--%IF_EQ=RACE=anydmg=SELECTED%-->>-- Any DMG Race --</OPTION>
+                <OPTION VALUE="aasimar" <!--%IF_EQ=RACE=aasimar=SELECTED%-->>&nbsp;&nbsp;Aasimar</OPTION>
+                <OPTION VALUE="bugbear" <!--%IF_EQ=RACE=bugbear=SELECTED%-->>&nbsp;&nbsp;Bugbear</OPTION>
+                <OPTION VALUE="dopple" <!--%IF_EQ=RACE=dopple=SELECTED%-->>&nbsp;&nbsp;Doppleganger</OPTION>
+                <OPTION VALUE="deepdwarf" <!--%IF_EQ=RACE=deepdwarf=SELECTED%-->>&nbsp;&nbsp;Dwarf, Deep</OPTION>
+                <OPTION VALUE="derro" <!--%IF_EQ=RACE=derro=SELECTED%-->>&nbsp;&nbsp;Dwarf, Derro</OPTION>
+                <OPTION VALUE="duergar" <!--%IF_EQ=RACE=duergar=SELECTED%-->>&nbsp;&nbsp;Dwarf, Duergar</OPTION>
+                <OPTION VALUE="mtndwarf" <!--%IF_EQ=RACE=mtndwarf=SELECTED%-->>&nbsp;&nbsp;Dwarf, Mountain</OPTION>
+                <OPTION VALUE="aqelf" <!--%IF_EQ=RACE=aqelf=SELECTED%-->>&nbsp;&nbsp;Elf, Aquatic</OPTION>
+                <OPTION VALUe="drow" <!--%IF_EQ=RACE=drow=SELECTED%-->>&nbsp;&nbsp;Elf, Drow</OPTION>
+                <OPTION VALUE="grayelf" <!--%IF_EQ=RACE=grayelf=SELECTED%-->>&nbsp;&nbsp;Elf, Gray</OPTION>
+                <OPTION VALUE="wildelf" <!--%IF_EQ=RACE=wildelf=SELECTED%-->>&nbsp;&nbsp;Elf, Wild</OPTION>
+                <OPTION VALUE="woodelf" <!--%IF_EQ=RACE=woodelf=SELECTED%-->>&nbsp;&nbsp;Elf, Wood</OPTION>
+                <OPTION VALUE="gnoll" <!--%IF_EQ=RACE=gnoll=SELECTED%-->>&nbsp;&nbsp;Gnoll</OPTION>
+                <OPTION VALUE="frstgnome" <!--%IF_EQ=RACE=frstgnome=SELECTED%-->>&nbsp;&nbsp;Gnome, Forest</OPTION>
+                <OPTION VALUE="svirf" <!--%IF_EQ=RACE=svirf=SELECTED%-->>&nbsp;&nbsp;Gnome, Svirfneblin</OPTION>
+                <OPTION VALUE="goblin" <!--%IF_EQ=RACE=goblin=SELECTED%-->>&nbsp;&nbsp;Goblin</OPTION>
+                <OPTION VALUE="deephalf" <!--%IF_EQ=RACE=deephalf=SELECTED%-->>&nbsp;&nbsp;Halfling, Deep</OPTION>
+                <OPTION VALUE="tallflw" <!--%IF_EQ=RACE=tallflw=SELECTED%-->>&nbsp;&nbsp;Halfling, Tallfellow</OPTION>
+                <OPTION VALUE="hobgob" <!--%IF_EQ=RACE=hobgob=SELECTED%-->>&nbsp;&nbsp;Hobgoblin</OPTION>
+                <OPTION VALUE="kobold" <!--%IF_EQ=RACE=kobold=SELECTED%-->>&nbsp;&nbsp;Kobold</OPTION>
+                <OPTION VALUE="lizard" <!--%IF_EQ=RACE=lizard=SELECTED%-->>&nbsp;&nbsp;Lizardfolk</OPTION>
+                <OPTION VALUE="mindflayer" <!--%IF_EQ=RACE=mindflayer=SELECTED%-->>&nbsp;&nbsp;Mind Flayer</OPTION>
+                <OPTION VALUE="minotaur" <!--%IF_EQ=RACE=minotaur=SELECTED%-->>&nbsp;&nbsp;Minotaur</OPTION>
+                <OPTION VALUE="ogre" <!--%IF_EQ=RACE=ogre=SELECTED%-->>&nbsp;&nbsp;Ogre</OPTION>
+                <OPTION VALUE="ogremage" <!--%IF_EQ=RACE=ogremage=SELECTED%-->>&nbsp;&nbsp;Ogre Mage</OPTION>
+                <OPTION VALUE="orc" <!--%IF_EQ=RACE=orc=SELECTED%-->>&nbsp;&nbsp;Orc</OPTION>
+                <OPTION VALUE="tiefling" <!--%IF_EQ=RACE=tiefling=SELECTED%-->>&nbsp;&nbsp;Tiefling</OPTION>
+                <OPTION VALUE="troglodyte" <!--%IF_EQ=RACE=troglodyte=SELECTED%-->>&nbsp;&nbsp;Troglodyte</OPTION>
+              </OPTGROUP>
+              <OPTGROUP LABEL="Monster Manual Races">
+                <OPTION VALUE="anymm" <!--%IF_EQ=RACE=anymm=SELECTED%-->>-- Any Monster Manual Race --</OPTION>
+                <OPTION VALUE="aranea" <!--%IF_EQ=RACE=aranea=SELECTED%-->>&nbsp;&nbsp;Aranea</OPTION>
+                <OPTION VALUE="azer" <!--%IF_EQ=RACE=azer=SELECTED%-->>&nbsp;&nbsp;Azer</OPTION>
+                <OPTION VALUE="centaur" <!--%IF_EQ=RACE=centaur=SELECTED%-->>&nbsp;&nbsp;Centaur</OPTION>
+                <OPTION VALUE="drider" <!--%IF_EQ=RACE=drider=SELECTED%-->>&nbsp;&nbsp;Drider</OPTION>
+                <OPTION VALUE="ettin" <!--%IF_EQ=RACE=ettin=SELECTED%-->>&nbsp;&nbsp;Ettin</OPTION>
+                <OPTION VALUE="cloudg" <!--%IF_EQ=RACE=cloudg=SELECTED%-->>&nbsp;&nbsp;Giant, Cloud</OPTION>
+                <OPTION VALUE="fireg" <!--%IF_EQ=RACE=fireg=SELECTED%-->>&nbsp;&nbsp;Giant, Fire</OPTION>
+                <OPTION VALUE="frostg" <!--%IF_EQ=RACE=frostg=SELECTED%-->>&nbsp;&nbsp;Giant, Frost</OPTION>
+                <OPTION VALUE="hillg" <!--%IF_EQ=RACE=hillg=SELECTED%-->>&nbsp;&nbsp;Giant, Hill</OPTION>
+                <OPTION VALUE="stoneg" <!--%IF_EQ=RACE=stoneg=SELECTED%-->>&nbsp;&nbsp;Giant, Stone</OPTION>
+                <OPTION VALUE="stormg" <!--%IF_EQ=RACE=stormg=SELECTED%-->>&nbsp;&nbsp;Giant, Storm</OPTION>
+                <OPTION VALUE="grimlock" <!--%IF_EQ=RACE=grimlock=SELECTED%-->>&nbsp;&nbsp;Grimlock</OPTION>
+                <OPTION VALUE="haga" <!--%IF_EQ=RACE=haga=SELECTED%-->>&nbsp;&nbsp;Hag, Annis</OPTION>
+                <OPTION VALUE="hagg" <!--%IF_EQ=RACE=hagg=SELECTED%-->>&nbsp;&nbsp;Hag, Green</OPTION>
+                <OPTION VALUE="hags" <!--%IF_EQ=RACE=hags=SELECTED%-->>&nbsp;&nbsp;Hag, Sea</OPTION>
+                <OPTION VALUE="harpy" <!--%IF_EQ=RACE=harpy=SELECTED%-->>&nbsp;&nbsp;Harpy</OPTION>
+                <OPTION VALUE="kuotoa" <!--%IF_EQ=RACE=kuotoa=SELECTED%-->>&nbsp;&nbsp;Kuo-toa</OPTION>
+                <OPTION VALUE="locathah" <!--%IF_EQ=RACE=locathah=SELECTED%-->>&nbsp;&nbsp;Locathah</OPTION>
+                <OPTION VALUE="medusa" <!--%IF_EQ=RACE=medusa=SELECTED%-->>&nbsp;&nbsp;Medusa</OPTION>
+                <OPTION VALUE="sahuagin" <!--%IF_EQ=RACE=sahuagin=SELECTED%-->>&nbsp;&nbsp;Sahuagin</OPTION>
+                <OPTION VALUE="troll" <!--%IF_EQ=RACE=troll=SELECTED%-->>&nbsp;&nbsp;Troll</OPTION>
+                <OPTION VALUE="yuantia" <!--%IF_EQ=RACE=yuantia=SELECTED%-->>&nbsp;&nbsp;Yuan-ti, Abomination</OPTION>
+                <OPTION VALUE="yuantih" <!--%IF_EQ=RACE=yuantih=SELECTED%-->>&nbsp;&nbsp;Yuan-ti, Halfblood</OPTION>
+                <OPTION VALUE="yuantip" <!--%IF_EQ=RACE=yuantip=SELECTED%-->>&nbsp;&nbsp;Yuan-ti, Pureblood</OPTION>
+              </OPTGROUP>
+              <OPTGROUP LABEL="Creature Collection Races">
+                <OPTION VALUE="anycc" <!--%IF_EQ=RACE=anycc=SELECTED%-->>-- Any Creature Collection Race --</OPTION>
+                <OPTION VALUE="abandoned" <!--%IF_EQ=RACE=abandoned=SELECTED%-->>&nbsp;&nbsp;Abandoned</OPTION>
+                <OPTION VALUE="asaath" <!--%IF_EQ=RACE=asaath=SELECTED%-->>&nbsp;&nbsp;Asaath</OPTION>
+                <OPTION VALUE="batdevil" <!--%IF_EQ=RACE=batdevil=SELECTED%-->>&nbsp;&nbsp;Bat Devil</OPTION>
+                <OPTION VALUE="pwretch" <!--%IF_EQ=RACE=pwretch=SELECTED%-->>&nbsp;&nbsp;Carnival Krewe, Plague Wretch</OPTION>
+                <OPTION VALUE="charduni" <!--%IF_EQ=RACE=charduni=SELECTED%-->>&nbsp;&nbsp;Charduni</OPTION>
+                <OPTION VALUE="cgoblin" <!--%IF_EQ=RACE=cgoblin=SELECTED%-->>&nbsp;&nbsp;Coal Goblin</OPTION>
+                <OPTION VALUE="fdwarf" <!--%IF_EQ=RACE=fdwarf=SELECTED%-->>&nbsp;&nbsp;Dwarf, Forsaken</OPTION>
+                <OPTION VALUE="felf" <!--%IF_EQ=RACE=felf=SELECTED%-->>&nbsp;&nbsp;Elf, Forsaken</OPTION>
+                <OPTION VALUE="iceghoul" <!--%IF_EQ=RACE=iceghoul=SELECTED%-->>&nbsp;&nbsp;Ice Ghoul</OPTION>
+                <OPTION VALUE="proud" <!--%IF_EQ=RACE=proud=SELECTED%-->>&nbsp;&nbsp;Proud</OPTION>
+                <OPTION VALUE="mcora" <!--%IF_EQ=RACE=mcora=SELECTED%-->>&nbsp;&nbsp;Manticora</OPTION>
+                <OPTION VALUE="morgaunt" <!--%IF_EQ=RACE=morgaunt=SELECTED%-->>&nbsp;&nbsp;Morgaunt</OPTION>
+                <OPTION VALUE="ratman" <!--%IF_EQ=RACE=ratman=SELECTED%-->>&nbsp;&nbsp;Ratman</OPTION>
+                <OPTION VALUE="bgratman" <!--%IF_EQ=RACE=bgratman=SELECTED%-->>&nbsp;&nbsp;Ratman, Brown Gorger</OPTION>
+                <OPTION VALUE="dratman" <!--%IF_EQ=RACE=dratman=SELECTED%-->>&nbsp;&nbsp;Ratman, The Diseased</OPTION>
+                <OPTION VALUE="fratman" <!--%IF_EQ=RACE=fratman=SELECTED%-->>&nbsp;&nbsp;Ratman, Foamer</OPTION>
+                <OPTION VALUE="rwratman" <!--%IF_EQ=RACE=rwratman=SELECTED%-->>&nbsp;&nbsp;Ratman, Red Witch</OPTION>
+                <OPTION VALUE="skindev" <!--%IF_EQ=RACE=skindev=SELECTED%-->>&nbsp;&nbsp;Skin Devil</OPTION>
+                <OPTION VALUE="segoblin" <!--%IF_EQ=RACE=segoblin=SELECTED%-->>&nbsp;&nbsp;Spider-eye Goblin</OPTION>
+                <OPTION VALUE="stroll" <!--%IF_EQ=RACE=stroll=SELECTED%-->>&nbsp;&nbsp;Steppe Troll</OPTION>
+                <OPTION VALUE="selement" <!--%IF_EQ=RACE=selement=SELECTED%-->>&nbsp;&nbsp;Strife Elemental</OPTION>
+                <OPTION VALUE="tokal" <!--%IF_EQ=RACE=tokal=SELECTED%-->>&nbsp;&nbsp;Tokal Tribesman</OPTION>
+                <OPTION VALUE="ubantu" <!--%IF_EQ=RACE=ubantu=SELECTED%-->>&nbsp;&nbsp;Ubantu Tribesman</OPTION>
+              </OPTGROUP>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            <B>Primary</B> class:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="class">
+              <OPTION VALUE="any" <!--%IF_EQ=CLASS=any=SELECTED%-->>--- Any Class--- </OPTION>
+              <OPTGROUP LABEL="PC Classes">
+                <OPTION VALUE="anypc" <!--%IF_EQ=CLASS=anypc=SELECTED%-->>--- Any PC Class ---</OPTION>
+                <OPTION VALUE="barbarian" <!--%IF_EQ=CLASS=barbarian=SELECTED%-->>&nbsp;&nbsp;Barbarian</OPTION>
+                <OPTION VALUE="bard" <!--%IF_EQ=CLASS=bard=SELECTED%-->>&nbsp;&nbsp;Bard</OPTION>
+                <OPTION VALUE="cleric" <!--%IF_EQ=CLASS=cleric=SELECTED%-->>&nbsp;&nbsp;Cleric</OPTION>
+                <OPTION VALUE="druid" <!--%IF_EQ=CLASS=druid=SELECTED%-->>&nbsp;&nbsp;Druid</OPTION>
+                <OPTION VALUE="fighter" <!--%IF_EQ=CLASS=fighter=SELECTED%-->>&nbsp;&nbsp;Fighter</OPTION>
+                <OPTION VALUE="monk" <!--%IF_EQ=CLASS=monk=SELECTED%-->>&nbsp;&nbsp;Monk</OPTION>
+                <OPTION VALUE="paladin" <!--%IF_EQ=CLASS=paladin=SELECTED%-->>&nbsp;&nbsp;Paladin</OPTION>
+                <OPTION VALUE="ranger" <!--%IF_EQ=CLASS=ranger=SELECTED%-->>&nbsp;&nbsp;Ranger</OPTION>
+                <OPTION VALUE="rogue" <!--%IF_EQ=CLASS=rogue=SELECTED%-->>&nbsp;&nbsp;Rogue</OPTION>
+                <OPTION VALUE="sorcerer" <!--%IF_EQ=CLASS=sorcerer=SELECTED%-->>&nbsp;&nbsp;Sorcerer</OPTION>
+                <OPTION VALUE="wizard" <!--%IF_EQ=CLASS=wizard=SELECTED%-->>&nbsp;&nbsp;Wizard</OPTION>
+              </OPTGROUP>
+              <OPTGROUP LABEL="NPC Classes">
+                <OPTION VALUE="anynpc" <!--%IF_EQ=CLASS=anynpc=SELECTED%-->>--- Any NPC Class ---</OPTION>
+                <OPTION VALUE="adept" <!--%IF_EQ=CLASS=adept=SELECTED%-->>&nbsp;&nbsp;Adept</OPTION>
+                <OPTION VALUE="aristocrat" <!--%IF_EQ=CLASS=aristocrat=SELECTED%-->>&nbsp;&nbsp;Aristocrat</OPTION>
+                <OPTION VALUE="commoner" <!--%IF_EQ=CLASS=commoner=SELECTED%-->>&nbsp;&nbsp;Commoner</OPTION>
+                <OPTION VALUE="expert" <!--%IF_EQ=CLASS=expert=SELECTED%-->>&nbsp;&nbsp;Expert</OPTION>
+                <OPTION VALUE="warrior" <!--%IF_EQ=CLASS=warrior=SELECTED%-->>&nbsp;&nbsp;Warrior</OPTION>
+              </OPTGROUP>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Level:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="level">
+              <OPTION VALUE="any" <!--%IF_EQ=LEVEL=any=SELECTED%-->>Any</OPTION>
+              <OPTION VALUE="lo" <!--%IF_EQ=LEVEL=lo=SELECTED%-->>Any Low</OPTION>
+              <OPTION VALUE="mid" <!--%IF_EQ=LEVEL=mid=SELECTED%-->>Any Mid</OPTION>
+              <OPTION VALUE="hi" <!--%IF_EQ=LEVEL=hi=SELECTED%-->>Any High</OPTION>
+              <OPTION VALUE="1" <!--%IF_EQ=LEVEL=1=SELECTED%-->>1</OPTION>
+              <OPTION VALUE="2" <!--%IF_EQ=LEVEL=2=SELECTED%-->>2</OPTION>
+              <OPTION VALUE="3" <!--%IF_EQ=LEVEL=3=SELECTED%-->>3</OPTION>
+              <OPTION VALUE="4" <!--%IF_EQ=LEVEL=4=SELECTED%-->>4</OPTION>
+              <OPTION VALUE="5" <!--%IF_EQ=LEVEL=5=SELECTED%-->>5</OPTION>
+              <OPTION VALUE="6" <!--%IF_EQ=LEVEL=6=SELECTED%-->>6</OPTION>
+              <OPTION VALUE="7" <!--%IF_EQ=LEVEL=7=SELECTED%-->>7</OPTION>
+              <OPTION VALUE="8" <!--%IF_EQ=LEVEL=8=SELECTED%-->>8</OPTION>
+              <OPTION VALUE="9" <!--%IF_EQ=LEVEL=9=SELECTED%-->>9</OPTION>
+              <OPTION VALUE="10" <!--%IF_EQ=LEVEL=10=SELECTED%-->>10</OPTION>
+              <OPTION VALUE="11" <!--%IF_EQ=LEVEL=11=SELECTED%-->>11</OPTION>
+              <OPTION VALUE="12" <!--%IF_EQ=LEVEL=12=SELECTED%-->>12</OPTION>
+              <OPTION VALUE="13" <!--%IF_EQ=LEVEL=13=SELECTED%-->>13</OPTION>
+              <OPTION VALUE="14" <!--%IF_EQ=LEVEL=14=SELECTED%-->>14</OPTION>
+              <OPTION VALUE="15" <!--%IF_EQ=LEVEL=15=SELECTED%-->>15</OPTION>
+              <OPTION VALUE="16" <!--%IF_EQ=LEVEL=16=SELECTED%-->>16</OPTION>
+              <OPTION VALUE="17" <!--%IF_EQ=LEVEL=17=SELECTED%-->>17</OPTION>
+              <OPTION VALUE="18" <!--%IF_EQ=LEVEL=18=SELECTED%-->>18</OPTION>
+              <OPTION VALUE="19" <!--%IF_EQ=LEVEL=19=SELECTED%-->>19</OPTION>
+              <OPTION VALUE="20" <!--%IF_EQ=LEVEL=20=SELECTED%-->>20</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            <B>Secondary</B> class:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="class2">
+              <OPTION VALUE="">--- None ---</OPTION>
+              <OPTION VALUE="any" <!--%IF_EQ=CLASS2=any=SELECTED%-->>--- Any Class--- </OPTION>
+              <OPTGROUP LABEL="PC Classes">
+                <OPTION VALUE="anypc" <!--%IF_EQ=CLASS2=anypc=SELECTED%-->>--- Any PC Class ---</OPTION>
+                <OPTION VALUE="barbarian" <!--%IF_EQ=CLASS2=barbarian=SELECTED%-->>&nbsp;&nbsp;Barbarian</OPTION>
+                <OPTION VALUE="bard" <!--%IF_EQ=CLASS2=bard=SELECTED%-->>&nbsp;&nbsp;Bard</OPTION>
+                <OPTION VALUE="cleric" <!--%IF_EQ=CLASS2=cleric=SELECTED%-->>&nbsp;&nbsp;Cleric</OPTION>
+                <OPTION VALUE="druid" <!--%IF_EQ=CLASS2=druid=SELECTED%-->>&nbsp;&nbsp;Druid</OPTION>
+                <OPTION VALUE="fighter" <!--%IF_EQ=CLASS2=fighter=SELECTED%-->>&nbsp;&nbsp;Fighter</OPTION>
+                <OPTION VALUE="monk" <!--%IF_EQ=CLASS2=monk=SELECTED%-->>&nbsp;&nbsp;Monk</OPTION>
+                <OPTION VALUE="paladin" <!--%IF_EQ=CLASS2=paladin=SELECTED%-->>&nbsp;&nbsp;Paladin</OPTION>
+                <OPTION VALUE="ranger" <!--%IF_EQ=CLASS2=ranger=SELECTED%-->>&nbsp;&nbsp;Ranger</OPTION>
+                <OPTION VALUE="rogue" <!--%IF_EQ=CLASS2=rogue=SELECTED%-->>&nbsp;&nbsp;Rogue</OPTION>
+                <OPTION VALUE="sorcerer" <!--%IF_EQ=CLASS2=sorcerer=SELECTED%-->>&nbsp;&nbsp;Sorcerer</OPTION>
+                <OPTION VALUE="wizard" <!--%IF_EQ=CLASS2=wizard=SELECTED%-->>&nbsp;&nbsp;Wizard</OPTION>
+              </OPTGROUP>
+              <OPTGROUP LABEL="NPC Classes">
+                <OPTION VALUE="anynpc" <!--%IF_EQ=CLASS2=anynpc=SELECTED%-->>--- Any NPC Class ---</OPTION>
+                <OPTION VALUE="adept" <!--%IF_EQ=CLASS2=adept=SELECTED%-->>&nbsp;&nbsp;Adept</OPTION>
+                <OPTION VALUE="aristocrat" <!--%IF_EQ=CLASS2=aristocrat=SELECTED%-->>&nbsp;&nbsp;Aristocrat</OPTION>
+                <OPTION VALUE="commoner" <!--%IF_EQ=CLASS2=commoner=SELECTED%-->>&nbsp;&nbsp;Commoner</OPTION>
+                <OPTION VALUE="expert" <!--%IF_EQ=CLASS2=expert=SELECTED%-->>&nbsp;&nbsp;Expert</OPTION>
+                <OPTION VALUE="warrior" <!--%IF_EQ=CLASS2=warrior=SELECTED%-->>&nbsp;&nbsp;Warrior</OPTION>
+              </OPTGROUP>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Level:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="level2">
+              <OPTION VALUE="any" <!--%IF_EQ=LEVEL2=any=SELECTED%-->>Any</OPTION>
+              <OPTION VALUE="lo" <!--%IF_EQ=LEVEL2=lo=SELECTED%-->>Any Low</OPTION>
+              <OPTION VALUE="mid" <!--%IF_EQ=LEVEL2=mid=SELECTED%-->>Any Mid</OPTION>
+              <OPTION VALUE="hi" <!--%IF_EQ=LEVEL2=hi=SELECTED%-->>Any High</OPTION>
+              <OPTION VALUE="1" <!--%IF_EQ=LEVEL2=1=SELECTED%-->>1</OPTION>
+              <OPTION VALUE="2" <!--%IF_EQ=LEVEL2=2=SELECTED%-->>2</OPTION>
+              <OPTION VALUE="3" <!--%IF_EQ=LEVEL2=3=SELECTED%-->>3</OPTION>
+              <OPTION VALUE="4" <!--%IF_EQ=LEVEL2=4=SELECTED%-->>4</OPTION>
+              <OPTION VALUE="5" <!--%IF_EQ=LEVEL2=5=SELECTED%-->>5</OPTION>
+              <OPTION VALUE="6" <!--%IF_EQ=LEVEL2=6=SELECTED%-->>6</OPTION>
+              <OPTION VALUE="7" <!--%IF_EQ=LEVEL2=7=SELECTED%-->>7</OPTION>
+              <OPTION VALUE="8" <!--%IF_EQ=LEVEL2=8=SELECTED%-->>8</OPTION>
+              <OPTION VALUE="9" <!--%IF_EQ=LEVEL2=9=SELECTED%-->>9</OPTION>
+              <OPTION VALUE="10" <!--%IF_EQ=LEVEL2=10=SELECTED%-->>10</OPTION>
+              <OPTION VALUE="11" <!--%IF_EQ=LEVEL2=11=SELECTED%-->>11</OPTION>
+              <OPTION VALUE="12" <!--%IF_EQ=LEVEL2=12=SELECTED%-->>12</OPTION>
+              <OPTION VALUE="13" <!--%IF_EQ=LEVEL2=13=SELECTED%-->>13</OPTION>
+              <OPTION VALUE="14" <!--%IF_EQ=LEVEL2=14=SELECTED%-->>14</OPTION>
+              <OPTION VALUE="15" <!--%IF_EQ=LEVEL2=15=SELECTED%-->>15</OPTION>
+              <OPTION VALUE="16" <!--%IF_EQ=LEVEL2=16=SELECTED%-->>16</OPTION>
+              <OPTION VALUE="17" <!--%IF_EQ=LEVEL2=17=SELECTED%-->>17</OPTION>
+              <OPTION VALUE="18" <!--%IF_EQ=LEVEL2=18=SELECTED%-->>18</OPTION>
+              <OPTION VALUE="19" <!--%IF_EQ=LEVEL2=19=SELECTED%-->>19</OPTION>
+              <OPTION VALUE="20" <!--%IF_EQ=LEVEL2=20=SELECTED%-->>20</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD CLASS="NORMAL">
+            <B>Tertiary</B> class:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="class3">
+              <OPTION VALUE="">--- None ---</OPTION>
+              <OPTION VALUE="any" <!--%IF_EQ=CLASS3=any=SELECTED%-->>--- Any Class--- </OPTION>
+              <OPTGROUP LABEL="PC Classes">
+                <OPTION VALUE="anypc" <!--%IF_EQ=CLASS3=anypc=SELECTED%-->>--- Any PC Class ---</OPTION>
+                <OPTION VALUE="barbarian" <!--%IF_EQ=CLASS3=barbarian=SELECTED%-->>&nbsp;&nbsp;Barbarian</OPTION>
+                <OPTION VALUE="bard" <!--%IF_EQ=CLASS3=bard=SELECTED%-->>&nbsp;&nbsp;Bard</OPTION>
+                <OPTION VALUE="cleric" <!--%IF_EQ=CLASS3=cleric=SELECTED%-->>&nbsp;&nbsp;Cleric</OPTION>
+                <OPTION VALUE="druid" <!--%IF_EQ=CLASS3=druid=SELECTED%-->>&nbsp;&nbsp;Druid</OPTION>
+                <OPTION VALUE="fighter" <!--%IF_EQ=CLASS3=fighter=SELECTED%-->>&nbsp;&nbsp;Fighter</OPTION>
+                <OPTION VALUE="monk" <!--%IF_EQ=CLASS3=monk=SELECTED%-->>&nbsp;&nbsp;Monk</OPTION>
+                <OPTION VALUE="paladin" <!--%IF_EQ=CLASS3=paladin=SELECTED%-->>&nbsp;&nbsp;Paladin</OPTION>
+                <OPTION VALUE="ranger" <!--%IF_EQ=CLASS3=ranger=SELECTED%-->>&nbsp;&nbsp;Ranger</OPTION>
+                <OPTION VALUE="rogue" <!--%IF_EQ=CLASS3=rogue=SELECTED%-->>&nbsp;&nbsp;Rogue</OPTION>
+                <OPTION VALUE="sorcerer" <!--%IF_EQ=CLASS3=sorcerer=SELECTED%-->>&nbsp;&nbsp;Sorcerer</OPTION>
+                <OPTION VALUE="wizard" <!--%IF_EQ=CLASS3=wizard=SELECTED%-->>&nbsp;&nbsp;Wizard</OPTION>
+              </OPTGROUP>
+              <OPTGROUP LABEL="NPC Classes">
+                <OPTION VALUE="anynpc" <!--%IF_EQ=CLASS3=anynpc=SELECTED%-->>--- Any NPC Class ---</OPTION>
+                <OPTION VALUE="adept" <!--%IF_EQ=CLASS3=adept=SELECTED%-->>&nbsp;&nbsp;Adept</OPTION>
+                <OPTION VALUE="aristocrat" <!--%IF_EQ=CLASS3=aristocrat=SELECTED%-->>&nbsp;&nbsp;Aristocrat</OPTION>
+                <OPTION VALUE="commoner" <!--%IF_EQ=CLASS3=commoner=SELECTED%-->>&nbsp;&nbsp;Commoner</OPTION>
+                <OPTION VALUE="expert" <!--%IF_EQ=CLASS3=expert=SELECTED%-->>&nbsp;&nbsp;Expert</OPTION>
+                <OPTION VALUE="warrior" <!--%IF_EQ=CLASS3=warrior=SELECTED%-->>&nbsp;&nbsp;Warrior</OPTION>
+              </OPTGROUP>
+            </SELECT>
+          </TD>
+          <TD CLASS="NORMAL">
+            Level:
+          </TD>
+          <TD CLASS="NORMAL">
+            <SELECT NAME="level3">
+              <OPTION VALUE="any" <!--%IF_EQ=LEVEL3=any=SELECTED%-->>Any</OPTION>
+              <OPTION VALUE="lo" <!--%IF_EQ=LEVEL3=lo=SELECTED%-->>Any Low</OPTION>
+              <OPTION VALUE="mid" <!--%IF_EQ=LEVEL3=mid=SELECTED%-->>Any Mid</OPTION>
+              <OPTION VALUE="hi" <!--%IF_EQ=LEVEL3=hi=SELECTED%-->>Any High</OPTION>
+              <OPTION VALUE="1" <!--%IF_EQ=LEVEL3=1=SELECTED%-->>1</OPTION>
+              <OPTION VALUE="2" <!--%IF_EQ=LEVEL3=2=SELECTED%-->>2</OPTION>
+              <OPTION VALUE="3" <!--%IF_EQ=LEVEL3=3=SELECTED%-->>3</OPTION>
+              <OPTION VALUE="4" <!--%IF_EQ=LEVEL3=4=SELECTED%-->>4</OPTION>
+              <OPTION VALUE="5" <!--%IF_EQ=LEVEL3=5=SELECTED%-->>5</OPTION>
+              <OPTION VALUE="6" <!--%IF_EQ=LEVEL3=6=SELECTED%-->>6</OPTION>
+              <OPTION VALUE="7" <!--%IF_EQ=LEVEL3=7=SELECTED%-->>7</OPTION>
+              <OPTION VALUE="8" <!--%IF_EQ=LEVEL3=8=SELECTED%-->>8</OPTION>
+              <OPTION VALUE="9" <!--%IF_EQ=LEVEL3=9=SELECTED%-->>9</OPTION>
+              <OPTION VALUE="10" <!--%IF_EQ=LEVEL3=10=SELECTED%-->>10</OPTION>
+              <OPTION VALUE="11" <!--%IF_EQ=LEVEL3=11=SELECTED%-->>11</OPTION>
+              <OPTION VALUE="12" <!--%IF_EQ=LEVEL3=12=SELECTED%-->>12</OPTION>
+              <OPTION VALUE="13" <!--%IF_EQ=LEVEL3=13=SELECTED%-->>13</OPTION>
+              <OPTION VALUE="14" <!--%IF_EQ=LEVEL3=14=SELECTED%-->>14</OPTION>
+              <OPTION VALUE="15" <!--%IF_EQ=LEVEL3=15=SELECTED%-->>15</OPTION>
+              <OPTION VALUE="16" <!--%IF_EQ=LEVEL3=16=SELECTED%-->>16</OPTION>
+              <OPTION VALUE="17" <!--%IF_EQ=LEVEL3=17=SELECTED%-->>17</OPTION>
+              <OPTION VALUE="18" <!--%IF_EQ=LEVEL3=18=SELECTED%-->>18</OPTION>
+              <OPTION VALUE="19" <!--%IF_EQ=LEVEL3=19=SELECTED%-->>19</OPTION>
+              <OPTION VALUE="20" <!--%IF_EQ=LEVEL3=20=SELECTED%-->>20</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR>
+          <TD COLSPAN="4" CLASS="NORMAL">Number of NPCs to Generate: <INPUT TYPE="TEXT" VALUE="<!--%COUNT%-->" NAME="count" SIZE=5></TD>
+        </TR>
+        <TR>
+          <TD COLSPAN="4" CLASS="NORMAL">Ability Score Generation Strategy:
+            <SELECT NAME="scorestrategy">
+              <OPTION VALUE="1" <!--%IF_EQ=SCORESTRATEGY=1=SELECTED%-->>Best 3 of 4d6</OPTION>
+              <OPTION VALUE="2" <!--%IF_EQ=SCORESTRATEGY=2=SELECTED%-->>Straight 3d6</OPTION>
+              <OPTION VALUE="3" <!--%IF_EQ=SCORESTRATEGY=3=SELECTED%-->>Hero</OPTION>
+              <OPTION VALUE="4" <!--%IF_EQ=SCORESTRATEGY=4=SELECTED%-->>Average (10 and 11)</OPTION>
+              <OPTION VALUE="5" <!--%IF_EQ=SCORESTRATEGY=5=SELECTED%-->>All 18's</OPTION>
+            </SELECT>
+          </TD>
+        </TR>
+        <TR><TD COLSPAN=4 CLASS="NORMAL"><CENTER><INPUT TYPE="CHECKBOX" VALUE="1" NAME="statblock" <!--%IF_EQ=STATBLOCK=1=CHECKED%-->> Display in abbreviated format ("stat-block") (<A HREF="javascript:configureStatBlock()">configure stat-block output</A>)</CENTER></TD></TR>
+        <TR><TD COLSPAN=4 CLASS="NORMAL"><CENTER><INPUT TYPE="CHECKBOX" VALUE="Y" NAME="background" <!--%IF_EQ=BACKGROUND=Y=CHECKED%-->> Show NPC motivation and background</CENTER></TD></TR>
+        <TR><TD COLSPAN=4 CLASS="NORMAL"><CENTER><INPUT TYPE="SUBMIT" VALUE="Generate NPC"><BR><INPUT TYPE="BUTTON" VALUE="Reset Form" ONCLICK="resetForm()"></CENTER></TD></TR>
+        <TR><TD COLSPAN=4 CLASS="NORMAL"><CENTER>Random seed: <INPUT TYPE="TEXT" NAME="seed" SIZE=10><BR><I>current seed: <!--%SEED%--></I></CENTER></TD></TR>
+      </TABLE>
+    </FORM>
+    <P>
+
+    <!--%NPCDESC%-->
+
+    <P>
+
+    <DIV CLASS="NORMAL">
+      <A HREF="<!--%CGINAME%-->">Restart the NPC generator</A>.
+      <p>
+      <hr />
+      <h2>NPC Generator-Related Downloads</h2>
+      <p>
+      Like this generator?  Get the <a href="http://enworld.cyberstreet.com/news/modules.php?op=modload&name=Downloads&file=index&req=getit&lid=171">offline version</a>
+      (<a href="http://www.d20reviews.com/downloads/npc_win.zip">alternate link</a>)
+      <i>(Windows only)</i>
+      <p>
+      Are you a programmer?<br />
+      Are you interested in the (ANSI C) source code for the generator?<br />
+      <a href="http://www.aarg.net/~minam/downloads/npc_src.zip">Grab it here!</a>  (If you
+      want to tinker with the windows version, you'll also need to download
+      <a href="http://www.aarg.net/~minam/downloads/npc_win_src.zip">this file</a>, which
+      contains the Microsoft Visual C++ resource files for the interface.)
+      <p>
+      Want equipment for your NPC's?<br>
+      Check out Jonathan Jacobs' <a href="http://www.d20reviews.com/downloads/NPCgear.zip">NPC Equipment Generator</a>! <i>(for Windows and Linux/Unix)</i>
+    </DIV>
+
+    <HR SIZE="1">
+    <DIV CLASS="NORMAL">
+    <span style="color: red"><I><B>Opera 5.x Users:</B></I></span>  Due to a bug in Opera 5.x,
+    the online NPC generator will not work properly.  However, Opera 6 corrects the problem,
+    so if you use Opera 5.x, I would encourage you to upgrade to the new version.
+    <P>
+    If you discover any bugs or discrepancies while using this utility,
+    please send them to <A HREF="mailto:jgb3@email.byu.edu">jgb3@email.byu.edu</A>.
+    Be sure to include the following items in your message so that I can
+    duplicate the error:
+    <UL>
+      <LI>The current "<B>random seed</B>" value
+      <LI>The <B>alignment</B> you selected
+      <LI>The <B>gender</B> you selected
+      <LI>The <B>race</B> you selected
+      <LI>The <B>class</B> you selected
+      <LI>The <B>level</B> you selected
+    </UL>
+    If you do not specify even one of the above items in your e-mail, I may not
+    be able to duplicate the error you have found.
+    </DIV>
+    <HR SIZE="1">
+    <DIV CLASS="NORMAL">
+      This NPC generator has had <B><!--%COUNTER%--></B> hits since 23 Oct 2000!<BR>
+      <p>
+      <small>
+      This NPC generator incorporates data and information from the
+      Open Gaming License (OGL) and from the "Creature Collection" Copyright 2000 by Sword and Sorcery Studios.
+      The "Core (PHB)" races, "DMG" races, and "Monster Manual" races are from (respectively) the
+      "Player's Handbook", "Dungeon Master's Guide", and the "Monster Manual", all Copyright 2000
+      by Wizards of the Coast.  The character classes, skills, feats, spells, and level progression
+      rules are from the Player's Handbook and the Dungeon Master's Guide.  The above races,
+      classes, skills, feats, and rules also exist in the
+      <a href="http://www.opengamingfoundation.org/srd.html">System Reference Document</a> of the
+      Open Gaming License.  The "Creature Collection" races are from the "Creature Collection" by
+      Sword and Sorcery Studios.  All other aspects of this program, including the algorithms for
+      generating a random non-player character, are Copyright 2000 by Jamis Buck.
+      </small>
+    </DIV>
+  </body>
+</html>

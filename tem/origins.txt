@@ -1,0 +1,4 @@
+The character is originally from [areas], but now spends most of their time in [localareas].
+The character has spent most of their life in [localareas].
+The character has travelled to [areas] and [areas], but is originally from [areas].
+The character is from [localareas], but spends most of their time in [localareas], now.

@@ -1,0 +1,4 @@
+[persons]
+[groups]
+[institutions]
+[philosophies]
