@@ -14,9 +14,9 @@ primitive.
 You should set the CFLAGS environment variable to the locations of the
 following header files:
 
-* templates (a library hosted at this site)
-* writetem (a library hosted at this site)
-* dndutil (a library hosted at this site)
+* dnd-templates (a library hosted at this site)
+* dnd-writetem (a library hosted at this site)
+* dnd-util (a library hosted at this site)
 * qDecoder (http://www.qDecoder.org)
 
 You should also set the LDFLAGS environment variable to the locations of the
