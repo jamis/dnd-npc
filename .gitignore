@@ -1,0 +1,4 @@
+npc
+npc.cgi
+src/*.o
+history/*.o

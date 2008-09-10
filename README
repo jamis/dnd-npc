@@ -1,0 +1,23 @@
+This application is a generator, capable of randomly producing full-fledged
+non-player characters (NPCs) for D&D, 3rd edition. It includes a CGI
+front-end, a command-line front-end, and a windows front-end (though building
+the windows front-end is left as an exercise for the reader).
+
+BUILDING
+--------
+
+This library was written well before I knew anything about autoconf and
+friends. Thus, the makefile should be considered to be only a guideline, and
+you're expected to actually MUCK WITH IT. Yes, I know. How deliciously
+primitive.
+
+You should set the CFLAGS environment variable to the locations of the
+following header files:
+
+* templates (a library hosted at this site)
+* writetem (a library hosted at this site)
+* dndutil (a library hosted at this site)
+* qDecoder (http://www.qDecoder.org)
+
+You should also set the LDFLAGS environment variable to the locations of the
+library (*.a) files for each of the above as well.
